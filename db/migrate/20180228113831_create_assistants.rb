@@ -5,8 +5,9 @@ class CreateAssistants < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :password
       t.string :website
-      t.string :other
-      t.string :about
+      t.text :other
+      t.text :about
+
       t.timestamps
     end
   end

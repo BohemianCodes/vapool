@@ -1,0 +1,47 @@
+<%= form_with(model: assistant, local: true) do |form| %>
+  <% if assistant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(assistant.errors.count, "error") %> prohibited this assistant from being saved:</h2>
+
+      <ul>
+      <% assistant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :assistant_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :assistant_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password, id: :assistant_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website, id: :assistant_website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :other %>
+    <%= form.text_area :other, id: :assistant_other %>
+  </div>
+
+  <div class="field">
+    <%= form.label :about %>
+    <%= form.text_area :about, id: :assistant_about %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
